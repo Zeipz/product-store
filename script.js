@@ -94,6 +94,7 @@ function displayProducts(productsToDisplay) {
             
             productNumber.textContent = products.length;
             productCount.style.display = products.length > 0 ? 'block' : 'none';
+            alert('Gracias por su Compra');
         });
        });
     }

@@ -54,3 +54,46 @@ filterCategory.addEventListener('change', () => {
         displayProducts(filteredProducts);
        }
     });
+function displayProducts(productsToDisplay) {
+    
+    productList.innerHTML = `
+        <div class="product-header">
+            <span>Ítem</span>
+            <span>Categoría</span>
+            <span>Producto</span>
+            <span>Precio</span>
+            <span>Fecha de Vencimiento</span>
+            <span>Cantidad</span>
+            <span>Acciones</span>
+        </div>
+    `;
+    
+    productsToDisplay.forEach((product, index) => {
+        productList.innerHTML += `
+            <div class="product-item">
+                <span>${index + 1}</span>
+                <span>${product.category}</span>
+                <span>${product.product}</span>
+                <span>${product.price}</span>
+                <span>${product.expiryDate}</span>
+                <span>${product.quantity}</span>
+                <span><button class="sell-button" data-index="${index}">Vender</button></span>
+            </div>
+        `;
+    });
+
+    
+    const sellButtons = document.querySelectorAll('.sell-button');
+    sellButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const index = event.target.getAttribute('data-index');
+            
+            products.splice(index, 1);
+            
+            displayProducts(products);
+            
+            productNumber.textContent = products.length;
+            productCount.style.display = products.length > 0 ? 'block' : 'none';
+        });
+       });
+    }

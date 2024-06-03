@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
  
         clearForm();
         
+    });
+    
     searchProduct.addEventListener('input', () => {
         const searchValue = searchProduct.value.toLowerCase();
         
@@ -39,4 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
         
         displayProducts(filteredProducts);
     });
-    });
+
+filterCategory.addEventListener('change', () => {
+    const filterValue = filterCategory.value.toLowerCase();
+    if (filterValue === 'all') {
+      
+        displayProducts(products);
+    } else {
+        
+        const filteredProducts = products.filter(p => p.category.toLowerCase() === filterValue);
+       
+        displayProducts(filteredProducts);
+       }
+    });

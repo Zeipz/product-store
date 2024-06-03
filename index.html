@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Productos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Formulario de Productos</h1>
+    <form id="product-form">
+        <label for="category">Categoría:</label>
+        <select id="category" name="category">
+            <option value="Frituras">Frituras</option>
+            <option value="Lacteos">Lacteos</option>
+            <option value="Frutas">Frutas</option>
+            <option value="Verduras">Verduras</option>
+            <option value="Limpieza">Limpieza</option>
+            <option value="Dulces">Dulces</option>
+            <option value="Carnes">Carnes</option>
+        </select>
+        
+        <label for="product">Producto:</label>
+        <input type="text" id="product" name="product">
+        
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price">
+        
+        <label for="expiry-date">Fecha de Vencimiento:</label>
+        <input type="date" id="expiry-date" name="expiry-date">
+        
+        <label for="quantity">Cantidad:</label>
+        <input type="number" id="quantity" name="quantity">
+        
+        <button type="button" id="add-button">Agregar</button>
+    </form>
     
+    <h2>Buscar Producto</h2>
+    <div class="search-container">
+        <input type="text" id="search-product" placeholder="Buscar producto...">
+        <button type="button" id="search-button">🔍</button>
+    </div>
+    
+    <h2>Filtrar por Categoría</h2>
+    <select id="filter-category">
+        <option value="all">Todos los productos</option>
+        <option value="Frituras">Frituras</option>
+        <option value="Lacteos">Lacteos</option>
+        <option value="Frutas">Frutas</option>
+        <option value="Verduras">Verduras</option>
+        <option value="Limpieza">Limpieza</option>
+        <option value="Dulces">Dulces</option>
+        <option value="Carnes">Carnes</option>
+    </select>
+    
+    <div id="product-list">
+        <div class="product-header">
+            <span>Ítem</span>
+            <span>Categoría</span>
+            <span>Producto</span>
+            <span>Precio</span>
+            <span>Fecha de Vencimiento</span>
+            <span>Cantidad</span>
+            <span>Acciones</span>
+        </div>
+    </div>
+    
+    <div id="product-count" style="display: none;">
+        <p>La cantidad de productos agregados son: <span id="product-number">0</span></p>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>

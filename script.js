@@ -7,5 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchProduct = document.getElementById('search-product');
     const filterCategory = document.getElementById('filter-category');
 
-    
     let products = [];
+    
+    addButton.addEventListener('click', () => {
+       
+        const category = document.getElementById('category').value;
+        const product = document.getElementById('product').value;
+        const price = document.getElementById('price').value;
+        const expiryDate = document.getElementById('expiry-date').value;
+        const quantity = document.getElementById('quantity').value;
+
+      
+        const newProduct = { category, product, price, expiryDate, quantity };
+       
+        products.push(newProduct);
+
+        
+        displayProducts(products);
+        
+       
+        productNumber.textContent = products.length;
+        productCount.style.display = 'block';
+
+ 
+        clearForm();
+    });

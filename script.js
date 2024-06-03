@@ -97,3 +97,12 @@ function displayProducts(productsToDisplay) {
         });
        });
     }
+function clearForm() {
+    
+    document.getElementById('category').value = '';
+    document.getElementById('product').value = '';
+    document.getElementById('price').value = '';
+    document.getElementById('expiry-date').value = '';
+    document.getElementById('quantity').value = '';
+    }
+});

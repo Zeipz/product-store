@@ -31,4 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
         clearForm();
+        
+    searchProduct.addEventListener('input', () => {
+        const searchValue = searchProduct.value.toLowerCase();
+        
+        const filteredProducts = products.filter(p => p.product.toLowerCase().includes(searchValue));
+        
+        displayProducts(filteredProducts);
+    });
     });
